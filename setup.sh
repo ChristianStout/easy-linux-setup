@@ -45,9 +45,11 @@ install_font https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Ub
 echo "Setting up git"
 read -p " global git name  > " name
 read -p " global git email > " email
+read -p " global default branch name > " branch_name
 git config --global user.name "$name"
 git config --global user.email "$email"
-
+git config --global init.defaultBranch $branch_name
+git config --global core.editor "nvim"
 
 echo "Cloning dotfiles"
 
